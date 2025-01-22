@@ -1,8 +1,10 @@
-from src.monte_carlo_pi import MonteCarloPi
+"""Docscring"""
 import numpy as np
+from monte_carlo_pi import MonteCarloPi
 
 
-def test_MC_pi_data_creation():
+def test_mc_pi_data_creation():
+    """Test initial creation"""
     num_points = 10
     sim = MonteCarloPi(num_points)
 
@@ -11,6 +13,7 @@ def test_MC_pi_data_creation():
 
 
 def test_run_simulation():
+    """Test simulation"""
     sim = MonteCarloPi(100)
     inside_circle, history = sim.run()
     assert len(inside_circle) == 100

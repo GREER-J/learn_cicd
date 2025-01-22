@@ -1,6 +1,7 @@
+"""Renders animation from collection of figures"""
 import os
-import imageio.v3 as imageio
 import time
+import imageio.v3 as imageio
 
 
 def generate_mp4_from_figures(figures_dir, output_dir, batch_size=350):

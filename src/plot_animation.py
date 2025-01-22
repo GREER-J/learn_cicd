@@ -1,3 +1,4 @@
+"""Creates a collection of figures for animation, one from each frame"""
 import os
 import numpy as np
 import matplotlib.pyplot as plt
@@ -17,9 +18,18 @@ def do_animation(points, inside_circle, history, figures_dir):
 
         # Top subplot: Scatter plot of points
         plt.subplot(2, 1, 1)
-        plt.scatter(points[:i][inside_circle[:i], 0], points[:i][inside_circle[:i], 1], color='blue', label='Inside Circle')
-        plt.scatter(points[:i][~inside_circle[:i], 0], points[:i][~inside_circle[:i], 1], color='red', label='Outside Circle')
-        plt.plot(np.cos(theta), np.sin(theta), color='black', linestyle='--', label='Circle Boundary')
+        plt.scatter(points[:i][inside_circle[:i], 0],
+                    points[:i][inside_circle[:i], 1],
+                    color='blue', label='Inside Circle')
+
+        plt.scatter(points[:i][~inside_circle[:i], 0],
+                    points[:i][~inside_circle[:i], 1],
+                    color='red', label='Outside Circle')
+
+        plt.plot(np.cos(theta), np.sin(theta),
+                 color='black',
+                 linestyle='--',
+                 label='Circle Boundary')
         plt.axis('equal')
         plt.legend()
         plt.title("Monte Carlo Simulation of Pi")
